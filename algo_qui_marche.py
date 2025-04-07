@@ -12,15 +12,15 @@ alpha = 1
 
 
 
-# x0 = np.zeros(N+1)
-# y0 = np.zeros(N+1)
+x0 = np.zeros(N+1)
+y0 = np.zeros(N+1)
 
-# y0[0] = 1
-# y0[-1] = 0
-# x0[0] = 0
-# x0[-1] = np.sqrt((L-2*ds)**2 -1) + 2*ds
-# x0[1:N-2] = np.linspace(ds, np.sqrt(L**2 -1) + ds, N-3)
-# y0[1:N-2] = np.linspace(1, 0, N-3)
+y0[0] = 1
+y0[N] = 0
+x0[0] = 0
+x0[N] = np.sqrt((L-2*ds)**2 -1) + 2*ds
+x0[1:N] = np.linspace(ds, np.sqrt((L-2*ds)**2 -1) + ds, N-1)
+y0[1:N] = np.linspace(1, 0, N-1)
 
 theta0 = np.zeros(N)
 theta0[0] = 0
@@ -29,8 +29,8 @@ for i in range(1, N-1):
     theta0[i] = -np.arcsin(1 / (L - 2*ds))
 
 
-x0 = np.linspace(0, np.sqrt(L**2 -1), N+1)
-y0 = np.linspace(1, 0, N+1)
+# x0 = np.linspace(0, np.sqrt(L**2 -1), N+1)
+# y0 = np.linspace(1, 0, N+1)
 
 z0 = np.concatenate([x0, y0, np.abs(y0), theta0])
 
