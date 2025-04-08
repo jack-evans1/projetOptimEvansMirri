@@ -93,7 +93,7 @@ def c1i(z):
     theta = z[3*(N+1):]
     y = z[(N+1):2*(N+1)]
     w = z[2*(N+1):3*(N+1)]
-    return -(-w + y)
+    return -(-w + y) # On met -cineq en realité
 def c2i(z):
     theta = z[3*(N+1):]
     y = z[(N+1):2*(N+1)]
